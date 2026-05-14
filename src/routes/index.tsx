@@ -5,9 +5,9 @@ import { ScrollText, Shield, Search, Users, BookOpen, Award } from "lucide-react
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Csányi Levéltár — Hiteles családfakutatás Magyarországon" },
+      { title: "Családfakutatás — Találja meg elveszett rokonait" },
       { name: "description", content: "Tudományos igényű családfakutatás levéltári forrásokból. Időpontfoglalás, online konzultáció, interaktív családfa." },
-      { property: "og:title", content: "Csányi Levéltár — Hiteles családfakutatás" },
+      { property: "og:title", content: "Csaladáfakutatás — Fény derül az igazságra" },
       { property: "og:description", content: "Levéltári kutatás, anyakönyvi források, DNS-eredmények értelmezése." },
     ],
   }),
@@ -20,20 +20,19 @@ function Home() {
       <section className="relative overflow-hidden">
         <div className="container-prose pt-20 pb-24 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="badge-seal"><Award className="w-3 h-3" /> Magyar Genealógiai Társaság tag</span>
+            <span className="badge-seal"><Award className="w-3 h-3" /> Privát és Hiteles adatok</span>
             <h1 className="mt-5 font-serif text-5xl md:text-6xl leading-[1.05] text-primary">
-              Az Ön családjának <em className="text-secondary">története</em>, levéltári hitelességgel.
+              Találja meg <em className="text-secondary">elveszett</em>rokonait!
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl">
-              Több mint két évtizedes tapasztalattal kutatunk anyakönyvekben, urbáriumokban és
-              egyházi forrásokban — minden megállapítást dokumentumokkal alátámasztva.
+              Nem is meri rokonait, kapcsolatot szeretne termeteni az elveszett családtagait, szeretne egy vizuális csaladfát?
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                 <Link to="/idopont">Időpont kérése</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-gold/60 text-primary">
-                <Link to="/csaladfa">Élő családfa megtekintése</Link>
+                <Link to="/csaladfa">Vizuális családfa megtekintése</Link>
               </Button>
             </div>
             <div className="mt-10 flex items-center gap-6 text-xs text-muted-foreground">
