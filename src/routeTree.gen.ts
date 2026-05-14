@@ -13,6 +13,8 @@ import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
 import { Route as RolamRouteImport } from './routes/rolam'
 import { Route as KapcsolatRouteImport } from './routes/kapcsolat'
 import { Route as IdopontRouteImport } from './routes/idopont'
+import { Route as CsaladfaRouteImport } from './routes/csaladfa'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SzolgaltatasokRoute = SzolgaltatasokRouteImport.update({
@@ -35,6 +37,16 @@ const IdopontRoute = IdopontRouteImport.update({
   path: '/idopont',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CsaladfaRoute = CsaladfaRouteImport.update({
+  id: '/csaladfa',
+  path: '/csaladfa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,6 +55,8 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
   '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
@@ -50,6 +64,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
   '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
@@ -58,6 +74,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
   '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
@@ -65,12 +83,28 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/idopont' | '/kapcsolat' | '/rolam' | '/szolgaltatasok'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/csaladfa'
+    | '/idopont'
+    | '/kapcsolat'
+    | '/rolam'
+    | '/szolgaltatasok'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/idopont' | '/kapcsolat' | '/rolam' | '/szolgaltatasok'
+  to:
+    | '/'
+    | '/auth'
+    | '/csaladfa'
+    | '/idopont'
+    | '/kapcsolat'
+    | '/rolam'
+    | '/szolgaltatasok'
   id:
     | '__root__'
     | '/'
+    | '/auth'
+    | '/csaladfa'
     | '/idopont'
     | '/kapcsolat'
     | '/rolam'
@@ -79,6 +113,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  CsaladfaRoute: typeof CsaladfaRoute
   IdopontRoute: typeof IdopontRoute
   KapcsolatRoute: typeof KapcsolatRoute
   RolamRoute: typeof RolamRoute
@@ -115,6 +151,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IdopontRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/csaladfa': {
+      id: '/csaladfa'
+      path: '/csaladfa'
+      fullPath: '/csaladfa'
+      preLoaderRoute: typeof CsaladfaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -127,6 +177,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  CsaladfaRoute: CsaladfaRoute,
   IdopontRoute: IdopontRoute,
   KapcsolatRoute: KapcsolatRoute,
   RolamRoute: RolamRoute,
