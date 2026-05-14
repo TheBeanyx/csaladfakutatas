@@ -36,8 +36,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Csányi Levéltár — Hiteles családfakutatás" },
+      { title: "Csaladfakutatás— Hiteles családfakutatás" },
       { name: "description", content: "Profi családfakutatás levéltári forrásokból. Időpontfoglalás, élő családfa és személyes konzultáció." },
+      { property: "og:title", content: "Csaladfakutatás— Hiteles családfakutatás" },
+      { name: "twitter:title", content: "Csaladfakutatás— Hiteles családfakutatás" },
+      { property: "og:description", content: "Profi családfakutatás levéltári forrásokból. Időpontfoglalás, élő családfa és személyes konzultáció." },
+      { name: "twitter:description", content: "Profi családfakutatás levéltári forrásokból. Időpontfoglalás, élő családfa és személyes konzultáció." },
+      { name: "twitter:card", content: "summary" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
