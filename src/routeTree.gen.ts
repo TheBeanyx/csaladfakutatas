@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
+import { Route as RolamRouteImport } from './routes/rolam'
+import { Route as KapcsolatRouteImport } from './routes/kapcsolat'
+import { Route as IdopontRouteImport } from './routes/idopont'
+import { Route as CsaladfaRouteImport } from './routes/csaladfa'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SzolgaltatasokRoute = SzolgaltatasokRouteImport.update({
+  id: '/szolgaltatasok',
+  path: '/szolgaltatasok',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RolamRoute = RolamRouteImport.update({
+  id: '/rolam',
+  path: '/rolam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KapcsolatRoute = KapcsolatRouteImport.update({
+  id: '/kapcsolat',
+  path: '/kapcsolat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IdopontRoute = IdopontRouteImport.update({
+  id: '/idopont',
+  path: '/idopont',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CsaladfaRoute = CsaladfaRouteImport.update({
+  id: '/csaladfa',
+  path: '/csaladfa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
+  '/idopont': typeof IdopontRoute
+  '/kapcsolat': typeof KapcsolatRoute
+  '/rolam': typeof RolamRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
+  '/idopont': typeof IdopontRoute
+  '/kapcsolat': typeof KapcsolatRoute
+  '/rolam': typeof RolamRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
+  '/csaladfa': typeof CsaladfaRoute
+  '/idopont': typeof IdopontRoute
+  '/kapcsolat': typeof KapcsolatRoute
+  '/rolam': typeof RolamRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/auth'
+    | '/csaladfa'
+    | '/idopont'
+    | '/kapcsolat'
+    | '/rolam'
+    | '/szolgaltatasok'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/auth'
+    | '/csaladfa'
+    | '/idopont'
+    | '/kapcsolat'
+    | '/rolam'
+    | '/szolgaltatasok'
+  id:
+    | '__root__'
+    | '/'
+    | '/auth'
+    | '/csaladfa'
+    | '/idopont'
+    | '/kapcsolat'
+    | '/rolam'
+    | '/szolgaltatasok'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthRoute: typeof AuthRoute
+  CsaladfaRoute: typeof CsaladfaRoute
+  IdopontRoute: typeof IdopontRoute
+  KapcsolatRoute: typeof KapcsolatRoute
+  RolamRoute: typeof RolamRoute
+  SzolgaltatasokRoute: typeof SzolgaltatasokRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/szolgaltatasok': {
+      id: '/szolgaltatasok'
+      path: '/szolgaltatasok'
+      fullPath: '/szolgaltatasok'
+      preLoaderRoute: typeof SzolgaltatasokRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rolam': {
+      id: '/rolam'
+      path: '/rolam'
+      fullPath: '/rolam'
+      preLoaderRoute: typeof RolamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kapcsolat': {
+      id: '/kapcsolat'
+      path: '/kapcsolat'
+      fullPath: '/kapcsolat'
+      preLoaderRoute: typeof KapcsolatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/idopont': {
+      id: '/idopont'
+      path: '/idopont'
+      fullPath: '/idopont'
+      preLoaderRoute: typeof IdopontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/csaladfa': {
+      id: '/csaladfa'
+      path: '/csaladfa'
+      fullPath: '/csaladfa'
+      preLoaderRoute: typeof CsaladfaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRoute,
+  CsaladfaRoute: CsaladfaRoute,
+  IdopontRoute: IdopontRoute,
+  KapcsolatRoute: KapcsolatRoute,
+  RolamRoute: RolamRoute,
+  SzolgaltatasokRoute: SzolgaltatasokRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
