@@ -16,7 +16,6 @@ export function SiteFooter() {
             <li><Link to="/csaladfa">Élő családfa</Link></li>
             <li><Link to="/rolam">Rólam</Link></li>
             <li><Link to="/idopont">Időpont kérése</Link></li>
-            <li><Link to="/kapcsolat">Kapcsolat</Link></li>
           </ul>
         </div>
       </div>
