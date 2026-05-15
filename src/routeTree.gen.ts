@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
 import { Route as RolamRouteImport } from './routes/rolam'
-import { Route as KapcsolatRouteImport } from './routes/kapcsolat'
 import { Route as IdopontRouteImport } from './routes/idopont'
 import { Route as CsaladfaRouteImport } from './routes/csaladfa'
 import { Route as AuthRouteImport } from './routes/auth'
@@ -33,11 +32,6 @@ const SzolgaltatasokRoute = SzolgaltatasokRouteImport.update({
 const RolamRoute = RolamRouteImport.update({
   id: '/rolam',
   path: '/rolam',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KapcsolatRoute = KapcsolatRouteImport.update({
-  id: '/kapcsolat',
-  path: '/kapcsolat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IdopontRoute = IdopontRouteImport.update({
@@ -108,7 +102,6 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
-  '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -124,7 +117,6 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
-  '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
   '/fiok': typeof AuthenticatedFiokRoute
@@ -141,7 +133,6 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/csaladfa': typeof CsaladfaRoute
   '/idopont': typeof IdopontRoute
-  '/kapcsolat': typeof KapcsolatRoute
   '/rolam': typeof RolamRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
@@ -159,7 +150,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/csaladfa'
     | '/idopont'
-    | '/kapcsolat'
     | '/rolam'
     | '/szolgaltatasok'
     | '/admin'
@@ -175,7 +165,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/csaladfa'
     | '/idopont'
-    | '/kapcsolat'
     | '/rolam'
     | '/szolgaltatasok'
     | '/fiok'
@@ -191,7 +180,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/csaladfa'
     | '/idopont'
-    | '/kapcsolat'
     | '/rolam'
     | '/szolgaltatasok'
     | '/_authenticated/admin'
@@ -209,7 +197,6 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   CsaladfaRoute: typeof CsaladfaRoute
   IdopontRoute: typeof IdopontRoute
-  KapcsolatRoute: typeof KapcsolatRoute
   RolamRoute: typeof RolamRoute
   SzolgaltatasokRoute: typeof SzolgaltatasokRoute
 }
@@ -228,13 +215,6 @@ declare module '@tanstack/react-router' {
       path: '/rolam'
       fullPath: '/rolam'
       preLoaderRoute: typeof RolamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kapcsolat': {
-      id: '/kapcsolat'
-      path: '/kapcsolat'
-      fullPath: '/kapcsolat'
-      preLoaderRoute: typeof KapcsolatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/idopont': {
@@ -363,7 +343,6 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   CsaladfaRoute: CsaladfaRoute,
   IdopontRoute: IdopontRoute,
-  KapcsolatRoute: KapcsolatRoute,
   RolamRoute: RolamRoute,
   SzolgaltatasokRoute: SzolgaltatasokRoute,
 }
