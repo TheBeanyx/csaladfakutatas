@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ScrollText, Shield, Search, Users, BookOpen, Award } from "lucide-react";
+import heroImg from "@/assets/hero-archive.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +46,9 @@ function Home() {
           </div>
 
           <div className="relative">
-            <div className="ornate-card p-8">
+            <div className="ornate-card overflow-hidden p-0">
+              <img src={heroImg} alt="Levéltári családfa-kutatás" width={1536} height={1024} className="w-full h-64 object-cover" />
+              <div className="p-8">
               <div className="flex items-center gap-3 pb-4 border-b border-border">
                 <ScrollText className="w-5 h-5 text-gold" />
                 <div className="font-serif text-xl text-primary">Példa: Kovács család</div>
@@ -68,6 +71,7 @@ function Home() {
               <p className="text-xs text-muted-foreground italic">
                 Minden bejegyzés dokumentált: jelzet, levéltár, oldalszám.
               </p>
+              </div>
             </div>
           </div>
         </div>
