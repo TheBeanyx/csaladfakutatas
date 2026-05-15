@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/auth")({
-  head: () => ({ meta: [{ title: "Bejelentkezés — Csányi Levéltár" }] }),
+  head: () => ({ meta: [{ title: "Bejelentkezés — Családfakutatás" }] }),
   component: Page,
 });
 

@@ -23,7 +23,7 @@ export function SiteHeader() {
             <ScrollText className="w-4 h-4" />
           </span>
           <div className="leading-tight">
-            <div className="font-serif text-xl text-primary">Csányi Levéltár</div>
+            <div className="font-serif text-xl text-primary">Családfakutatás</div>
             <div className="text-[10px] tracking-[0.18em] uppercase text-muted-foreground">Családfakutatás · 1998</div>
           </div>
         </Link>

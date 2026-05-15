@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/rolam")({
-  head: () => ({ meta: [{ title: "Rólam — Csányi Levéltár" }, { name: "description", content: "Rólam oldal." }] }),
+  head: () => ({ meta: [{ title: "Rólam — Családfakutatás" }, { name: "description", content: "Rólam oldal." }] }),
   component: Page,
 });
 function Page() {
