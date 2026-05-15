@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_authenticated/_admin/csaladfa")({ component: Page });
+export const Route = createFileRoute("/_authenticated/admin/csaladfa")({ component: Page });
 
 function Page() {
   const [nodes, setNodes] = useState<any[]>([]);

@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export const Route = createFileRoute("/_authenticated/_admin/uzenetek")({ component: Page });
+export const Route = createFileRoute("/_authenticated/admin/uzenetek")({ component: Page });
 
 function Page() {
   const [convs, setConvs] = useState<any[]>([]);
