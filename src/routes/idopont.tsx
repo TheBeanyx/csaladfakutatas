@@ -9,7 +9,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 export const Route = createFileRoute("/idopont")({
-  head: () => ({ meta: [{ title: "Időpontfoglalás — Csányi Levéltár" }, { name: "description", content: "Foglaljon időpontot családfakutatás konzultációra." }] }),
+  head: () => ({ meta: [{ title: "Időpontfoglalás — Családfakutatás" }, { name: "description", content: "Foglaljon időpontot családfakutatás konzultációra." }] }),
   component: Page,
 });
 

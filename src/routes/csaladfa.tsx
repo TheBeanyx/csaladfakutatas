@@ -11,7 +11,7 @@ import { toast } from "sonner";
 import { TreeDeciduous } from "lucide-react";
 
 export const Route = createFileRoute("/csaladfa")({
-  head: () => ({ meta: [{ title: "Élő családfa — Csányi Levéltár" }, { name: "description", content: "Interaktív, közösségileg bővülő családfa. Ön is javasolhat új ágat." }] }),
+  head: () => ({ meta: [{ title: "Élő családfa — Családfakutatás" }, { name: "description", content: "Interaktív, közösségileg bővülő családfa. Ön is javasolhat új ágat." }] }),
   component: Page,
 });
 
