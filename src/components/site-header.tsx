@@ -12,7 +12,6 @@ export function SiteHeader() {
     { to: "/szolgaltatasok", label: "Szolgáltatások" },
     { to: "/csaladfa", label: "Élő családfa" },
     { to: "/rolam", label: "Rólam" },
-    { to: "/kapcsolat", label: "Kapcsolat" },
   ] as const;
 
   return (
