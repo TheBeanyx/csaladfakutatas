@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-export const Route = createFileRoute("/_authenticated/_admin/idopontok")({ component: Page });
+export const Route = createFileRoute("/_authenticated/admin/idopontok")({ component: Page });
 
 function Page() {
   const [items, setItems] = useState<any[]>([]);
