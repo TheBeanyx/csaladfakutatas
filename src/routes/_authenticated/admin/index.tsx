@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
-export const Route = createFileRoute("/_authenticated/_admin/")({ component: Page });
+export const Route = createFileRoute("/_authenticated/admin/")({ component: Page });
 
 function Page() {
   const [stats, setStats] = useState({ pending: 0, suggestions: 0, conversations: 0 });
